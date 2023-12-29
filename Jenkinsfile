@@ -15,7 +15,7 @@ pipeline {
             steps {
                 // Pull content into a specific folder
                 script {
-                    dir('/home/ubuntu/Random_color_Generator') {
+                    dir('/var/lib/jenkins') {
                         sh 'git pull origin develop'
                     }
                 }
