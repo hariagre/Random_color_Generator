@@ -11,16 +11,16 @@ pipeline {
             }
         }
 
-       stage('Pull Content') {
-    steps {
-        script {
-            dir('/var/lib/jenkins') {
-                def gitOutput = sh(script: 'git pull origin develop', returnStatus: true).trim()
-                echo "Git Output: ${gitOutput}"
+        stage('Pull Content') {
+            steps {
+                // Pull content into a specific folder
+                script {
+                    dir('/var/lib/jenkins') {
+                        sh 'git pull origin develop'
+                    }
+                }
             }
         }
-    }
-}
 
         // Add more stages as needed for your build, test, deploy steps
     }
